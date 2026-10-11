@@ -22,7 +22,7 @@ repository (`IsPackageAvailable`). The arm64 bootstrap repository
 (`build/jam/repositories/HaikuPorts/arm64`) carries neither, so both checks
 fail silently and the whole feature is skipped. Full details, including how
 this was confirmed against the real download.haiku-os.org nightly, are in
-[rwebpositive-arm64/AGENTS.md](https://github.com/rainygirl/haiku-rwebpositive-arm64/blob/main/AGENTS.md).
+[rwebpositive-arm64/AGENTS.md](https://github.com/rainygirl/renkuos-rwebpositive-arm64/blob/main/AGENTS.md).
 
 ## What this fixes -- all of it, as of the follow-up session
 
@@ -54,7 +54,7 @@ Anyone using it also needs the guest's clock set correctly before `pkgman`
 can reach anything over https -- check with `date`, fix it if it reads
 1970. With that done, `pkgman add-repo` and `pkgman install` both work
 completely; see
-[rwebpositive-arm64](https://github.com/rainygirl/haiku-rwebpositive-arm64)'s
+[rwebpositive-arm64](https://github.com/rainygirl/renkuos-rwebpositive-arm64)'s
 README for the exact commands (and two more small, since-fixed snags on the
 repository side: a `repo.sha256` file next to the index, and every
 package's filename matching its own embedded version string exactly).
@@ -67,11 +67,11 @@ Needs a Haiku arm64 source tree that has already been built once (so
 copies of the ones this project already cross-compiled for HaikuWebKit.
 
 ```sh
-curl -fsSL https://raw.githubusercontent.com/rainygirl/haiku-renku-arm64-ssltlspatch/main/add-ssl-arm64.sh \
+curl -fsSL https://raw.githubusercontent.com/rainygirl/renkuos-renku-arm64-ssltlspatch/main/add-ssl-arm64.sh \
 	-o add-ssl-arm64.sh
-curl -fsSL https://raw.githubusercontent.com/rainygirl/haiku-renku-arm64-ssltlspatch/main/packages/openssl3-3.5.4-1-arm64.hpkg \
+curl -fsSL https://raw.githubusercontent.com/rainygirl/renkuos-renku-arm64-ssltlspatch/main/packages/openssl3-3.5.4-1-arm64.hpkg \
 	-o openssl3-3.5.4-1-arm64.hpkg
-curl -fsSL https://raw.githubusercontent.com/rainygirl/haiku-renku-arm64-ssltlspatch/main/packages/openssl3_devel-3.5.4-1-arm64.hpkg \
+curl -fsSL https://raw.githubusercontent.com/rainygirl/renkuos-renku-arm64-ssltlspatch/main/packages/openssl3_devel-3.5.4-1-arm64.hpkg \
 	-o openssl3_devel-3.5.4-1-arm64.hpkg
 mkdir -p packages
 mv openssl3-3.5.4-1-arm64.hpkg openssl3_devel-3.5.4-1-arm64.hpkg packages/
@@ -86,7 +86,7 @@ Or, already on a machine with this repository checked out as a sibling of
 the Haiku tree:
 
 ```sh
-curl -fsSL https://raw.githubusercontent.com/rainygirl/haiku-renku-arm64-ssltlspatch/main/add-ssl-arm64.sh | \
+curl -fsSL https://raw.githubusercontent.com/rainygirl/renkuos-renku-arm64-ssltlspatch/main/add-ssl-arm64.sh | \
 	bash -s -- /path/to/haiku /path/to/generated.arm64
 ```
 
