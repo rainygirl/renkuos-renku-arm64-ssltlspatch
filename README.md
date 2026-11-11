@@ -96,4 +96,7 @@ curl -fsSL https://raw.githubusercontent.com/rainygirl/renkuos-renku-arm64-ssltl
 environment variables before the `curl | bash` if you are not running from
 a checkout of this repository.)
 
-This program was written with Claude.
+## AI disclosure
+
+Parts of this patch were developed with the assistance of AI coding tools
+(Anthropic's Claude). All code has been reviewed and tested by the author.
